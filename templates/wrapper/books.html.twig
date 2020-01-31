@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}  books  {% endblock %}
+
+{% block body %}
+    {% include 'wrapper/filter.html.twig' %}
+
+
+    <h1>Books</h1>
+    <div style="text-align: center;">
+        {% if books | length > 0  %}
+            <table style="width:100%">
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>author name</th>
+                </tr>
+                {% for book in books  %}
+                    <tr>
+                        <td>{{ book.id }}</td>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.author.name }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <h1> No data</h1>
+        {% endif %}
+    </div>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+
+{% endblock %}
+

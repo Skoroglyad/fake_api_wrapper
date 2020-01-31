@@ -1,0 +1,31 @@
+<div style="text-align: center;">
+    <div>
+        <a href="{{ url('get_books') }}">/books</a>
+    </div>
+    <div>
+        <a href="{{ url('get_authors') }}">/authors </a>
+    </div>
+    <div>
+        <a href="{{ url('get_authors_books') }}">/authors/{authorId}/books</a>
+    </div>
+
+    <h2> set limit/offset {% if setId is defined %} /authorId {% endif %} to test wrapper</h2>
+    {% if setId is defined %} <h3>default authorId is 1</h3>  {% endif %}
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.limit) }}
+    {{ form_errors(form.limit) }}
+
+    {{ form_row(form.offset) }}
+    {{ form_errors(form.offset) }}
+
+    {% if form.authorId is defined  %}
+        {{ form_row(form.authorId) }}
+        {{ form_errors(form.authorId) }}
+    {% endif %}
+
+    {{ form_widget(form.submit, {'attr': {'class': 'blue_solid_button'}}) }}
+
+    {{ form_end(form) }}
+</div>

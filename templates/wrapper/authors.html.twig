@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}  authors  {% endblock %}
+
+{% block body %}
+    {% include 'wrapper/filter.html.twig' %}
+    <h1>authors</h1>
+    <div style="text-align: center;">
+
+        {% if authors | length > 0  %}
+            <table style="width:100%">
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                </tr>
+                {% for author in authors  %}
+                    <tr>
+                        <td>{{ author.id }}</td>
+                        <td>{{ author.name }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <h1> No data</h1>
+        {% endif %}
+    </div>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+
+{% endblock %}
+

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}  Test  {% endblock %}
+
+{% block body %}
+    <h1>Example of th wrapper</h1>
+    <div>
+        <a href="{{ url('get_books') }}">/books</a>
+    </div>
+    <div>
+        <a href="{{ url('get_authors') }}">/authors </a>
+    </div>
+    <div>
+        <a href="{{ url('get_authors_books') }}">/authors/{authorId}/books</a>
+    </div>
+
+{% endblock %}
+

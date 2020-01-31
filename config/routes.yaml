@@ -1,0 +1,15 @@
+index:
+  path: /
+  controller: App\Controller\IndexController::indexAction
+
+get_books:
+  path: /books
+  controller: App\Controller\IndexController::getBooksAction
+
+get_authors:
+  path: /authors
+  controller: App\Controller\IndexController::getAuthorsAction
+
+get_authors_books:
+  path: /authors/books
+  controller: App\Controller\IndexController::getAuthorsBooksAction
